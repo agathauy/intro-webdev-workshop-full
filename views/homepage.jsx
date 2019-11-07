@@ -2,6 +2,18 @@ const React = require('react');
 const moment = require('moment');
 import Layout from './layout';
 
+
+const getRandomColor = () => {
+    let colors = ['red', 'yellow', 'blue', 'orange', 'green', 'violet']
+    let min = 0;
+    let max = colors.length - 1;
+
+    const index = Math.round(Math.random() * (max - min) + min);
+    console.log(index)
+    console.log(colors[index]);
+    return colors[index];
+}
+
 class HomePage extends React.Component {
 
 
@@ -19,6 +31,7 @@ class HomePage extends React.Component {
             console.log(entry.message)
         })
 
+
         return (
             <Layout title="Notes & Sensors">
                 <div id="menu-bar">Notes & Sensors</div>
@@ -29,9 +42,10 @@ class HomePage extends React.Component {
                             .map(entry =>
                                 {
 
+
                                     return(
 
-                                    <div class="ui card custom-card fluid raised">
+                                    <div key={entry.id} className={`ui card custom-card fluid raised ${getRandomColor()}`}>
                                     <div class="content">
                                     <div class="header">{entry.title}</div>
                                     <div class="meta">
