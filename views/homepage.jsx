@@ -31,11 +31,11 @@ class HomePage extends React.Component {
 
                                     return(
 
-                                    <div class="ui card custom-card fluid">
+                                    <div class="ui card custom-card fluid raised">
                                     <div class="content">
                                     <div class="header">{entry.title}</div>
                                     <div class="meta">
-                                        <span>{moment(entry.timestamp).format()}</span>
+                                        <span>{moment(entry.timestamp).format("LLLL")}</span>
 
                                     </div>
                                     <p>{entry.message}</p>
